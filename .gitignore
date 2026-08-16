@@ -1,0 +1,55 @@
+﻿# â”€â”€ Dependencies â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+node_modules/
+package-lock.json.bak
+
+# â”€â”€ Java / Maven / Gradle build output â”€â”€â”€â”€â”€â”€â”€
+target/
+build/
+bin/
+out/
+*.class
+*.jar
+*.war
+*.ear
+.gradle/
+
+# â”€â”€ Test reports & generated artifacts â”€â”€â”€â”€â”€â”€â”€
+allure-report/
+allure-results/
+playwright-report/
+test-results/
+test-output/
+reports/
+newman/
+*.log
+
+# â”€â”€ Screenshots & screen recordings â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+screenshots/
+recordings/
+*.avi
+*.mp4
+*.webm
+
+# â”€â”€ IDE / editor â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.settings/
+.project
+.classpath
+
+# â”€â”€ OS cruft â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# â”€â”€ Secrets (never commit) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+.env
+.env.*
+*.pem
+*.p12
+*.jks
+*.keystore
+
