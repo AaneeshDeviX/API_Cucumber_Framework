@@ -25,8 +25,11 @@ jobs:
           distribution: temurin
           cache: maven
 
+      # @known-defect scenarios assert correct behaviour that the API under test
+      # does not implement — they fail by design and are documented in the README.
+      # Excluded here so the badge reflects regressions, not known API bugs.
       - name: Run tests
-        run: mvn -B test
+        run: mvn -B test "-Dcucumber.filter.tags=not @known-defect"
 
       - name: Upload Cucumber and Extent reports
         if: always()

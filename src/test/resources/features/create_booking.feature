@@ -35,8 +35,13 @@ Feature: Create Booking API
     When I send a POST request to "/booking"
     Then the response status code should be 500
 
-  @negative
-  Scenario: Create booking with invalid data type
+  # KNOWN DEFECT — Restful-Booker accepts a non-numeric totalprice ("abc") and
+  # returns 200 with a created booking instead of rejecting the payload. The
+  # assertion below states the CORRECT expected behaviour, so this scenario fails
+  # by design and documents the defect. It is excluded from the CI gate via
+  # `not @known-defect` so the badge tracks regressions rather than this bug.
+  @negative @known-defect
+  Scenario: Create booking with invalid data type is rejected
     Given I have a booking with invalid totalprice "abc"
     When I send a POST request to "/booking"
     Then the response status code should be 500

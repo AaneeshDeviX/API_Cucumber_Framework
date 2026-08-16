@@ -48,6 +48,24 @@ Reports land in `target/` — Cucumber HTML plus the Extent Spark report.
 | `health_check.feature` | 1 | service ping |
 | `e2e_integration.feature` | 1 | create → read → update → delete in one flow |
 
+## Known defect found by this suite
+
+`Create booking with invalid data type is rejected` posts a non-numeric
+`totalprice` of `"abc"`. Restful-Booker responds **200 with a created booking**
+rather than rejecting the payload — the API performs no type validation on that
+field.
+
+The scenario asserts the *correct* behaviour (a 4xx/5xx rejection), so it fails by
+design and documents the defect rather than hiding it. It carries the
+`@known-defect` tag and CI runs `not @known-defect`, so the badge tracks
+regressions rather than this known API bug.
+
+Run it deliberately with:
+
+```bash
+mvn test "-Dcucumber.filter.tags=@known-defect"
+```
+
 ## Layout
 
 ```
